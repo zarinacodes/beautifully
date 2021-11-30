@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
-    "build": "cd client && npm install && npm run build"
+    "build": "cd client && npm install && set INLINE_RUNTIME_CHUNK=false && npm run build"
   },
   "keywords": [],
   "author": "",
