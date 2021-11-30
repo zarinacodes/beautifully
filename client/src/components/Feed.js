@@ -12,7 +12,9 @@ export default () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("http://localhost:8080/api/products?offset=0&pageSize=12")
+    fetch(
+      "https://beautifully-app.herokuapp.com/api/products/api/products?offset=0&pageSize=12"
+    )
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
