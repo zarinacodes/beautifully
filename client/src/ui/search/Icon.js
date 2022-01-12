@@ -1,13 +1,22 @@
 import styled from "styled-components";
-import { breakpoints } from "../mixins";
+import { breakpoints, color } from "../mixins";
 
-export const Icon = styled.div`
-  height: 18px;
-  width: 18px;
-  padding-right: 15px;
+export const Icon = styled.button`
+  display: none;
 
   @media (max-width: ${breakpoints("mobile")}) {
+    position: relative;
+    height: 19px;
+    width: 19px;
+    display: flex;
     padding: 0;
+    border: none;
+    background-color: ${color("light")};
+
+    svg {
+      height: 19px;
+      width: 19px;
+    }
   }
 `;
 

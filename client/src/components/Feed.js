@@ -5,8 +5,10 @@ import Product from "./Product";
 import { useState, useEffect } from "react";
 import gif from "../assets/loading.gif";
 import Loading from "../ui/loading";
+import { useProductContext } from "./useProductContext";
 
 export default () => {
+  const { search } = useProductContext();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -29,15 +31,22 @@ export default () => {
   ) : (
     <>
       <Feed>
-        {products.map((product, index) => (
-          <Product
-            name={product.name}
-            collection={product.collection || "Regular"}
-            image={product.image}
-            price={product.price}
-            key={product.name + index}
-          />
-        ))}
+        {products
+          .filter(
+            (product) =>
+              product.name.toLowerCase().includes(search.toLowerCase()) ||
+              search === ""
+          )
+          .map((product, index) => (
+            <Product
+              name={product.name}
+              collection={product.collection || "Regular"}
+              image={product.image}
+              price={product.price}
+              key={product.id}
+              id={product.id}
+            />
+          ))}
       </Feed>
       <Feed.ButtonContainer>
         <Feed.ShowMore>Show More</Feed.ShowMore>

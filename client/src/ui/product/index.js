@@ -3,6 +3,8 @@ import Collection from "./Collection";
 import Image from "./Image";
 import Price from "./Price";
 import Title from "./Title";
+import Info from "./Info";
+import Like from "./Like";
 import { breakpoints } from "../mixins";
 
 export const Product = styled.div`
@@ -24,5 +26,7 @@ Product.Collection = Collection;
 Product.Image = Image;
 Product.Price = Price;
 Product.Title = Title;
+Product.Info = Info;
+Product.Like = Like;
 
 export default Product;

@@ -18,7 +18,7 @@ export const MainHeader = styled.div`
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints("mobile")}) {
-    grid-template-columns: 15% 70% 5% 10%;
+    grid-template-columns: 15% 55% 10% 15%;
     justify-items: flex-start;
     padding: 0 15px;
   }

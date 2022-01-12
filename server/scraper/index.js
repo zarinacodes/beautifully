@@ -10,6 +10,10 @@ const image = (imgHTML) => {
     .replace("url[file:/product/style]", "url[file:/product/main]");
 };
 
+const attribute = (attributeHTML, attr) => {
+  return attributeHTML.attr(attr);
+};
+
 const text = (textHTML) => {
   return textHTML.text().trim();
 };
@@ -21,12 +25,16 @@ const mapProductData = (document, product) => {
     name: text(findInProductQuery("h3.item-heading > a")),
     collection: text(findInProductQuery(".marketing-marker")),
     price: text(findInProductQuery(".price.regular")),
+    id: attribute(
+      findInProductQuery("article.hm-product-item").prevObject,
+      "data-articlecode"
+    ),
   };
 };
 
 const parseProducts = (document) => {
   const products = document(
-    "ul.products-listing.large > .product-item"
+    "ul.products-listing.large > li.product-item"
   ).children();
   return Array.from(products).map((product) =>
     mapProductData(document, product)

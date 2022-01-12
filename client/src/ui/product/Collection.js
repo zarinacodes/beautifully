@@ -9,12 +9,6 @@ export const Collection = styled.h5`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
-  svg {
-    width: 17px;
-    height: 17px;
-    color: ${color("dark")};
-  }
 `;
 
 export default Collection;

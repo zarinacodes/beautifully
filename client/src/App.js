@@ -1,13 +1,16 @@
 import Header from "./components/Header";
 import Page from "./components/Page";
 import GlobalStyle from "./ui/global";
+import { ProductContextProvider } from "./components/useProductContext";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <Header />
-      <Page />
+      <ProductContextProvider>
+        <GlobalStyle />
+        <Header />
+        <Page />
+      </ProductContextProvider>
     </>
   );
 }
