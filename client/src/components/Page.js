@@ -7,7 +7,7 @@ import Feed from "./Feed";
 export default () => {
   return (
     <Page>
-      <PageTitle>Women's Tops</PageTitle>
+      <PageTitle>Women's clothing</PageTitle>
       <Filters />
       <Feed />
     </Page>
