@@ -1,4 +1,4 @@
-# BEAUTIFULLY 💜
+# beautifully 💜
 
 **Beautifully** is an online clothing store with a minimalistic style that I have designed and built to practice and
 improve my **React** skills. While building this project I focused on creating **an exceptional user experience**,
