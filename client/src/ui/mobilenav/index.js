@@ -18,6 +18,7 @@ export const MobileNav = styled.nav`
     top: 0;
     left: 0;
     background-color: ${color("light")};
+    z-index: 999;
   }
 `;
 
