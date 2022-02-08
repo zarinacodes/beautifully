@@ -3,11 +3,11 @@
 import Feed from "../ui/feed";
 import Product from "./Product";
 import { useState, useEffect } from "react";
-import gif from "../assets/loading.gif";
 import Loading from "../ui/loading";
 import { useProductContext } from "./useProductContext";
+import { Player } from "@lottiefiles/react-lottie-player";
 
-export default () => {
+export default ({ gender }) => {
   const { search } = useProductContext();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,18 +15,26 @@ export default () => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      "https://beautifully-app.herokuapp.com/api/products?offset=0&pageSize=12"
+      `http://localhost:5000/api/products/${gender}?offset=0&pageSize=12`
+      // "https://beautifully-app.herokuapp.com/api/products?offset=0&pageSize=12"
     )
       .then((response) => response.json())
       .then((data) => {
         setProducts(data);
         setIsLoading(false);
       });
-  }, []);
+  }, [gender]);
 
   return isLoading ? (
     <Loading>
-      <img src={gif} style={({ maxHeight: "300px" }, { maxWidth: "300px" })} />
+      <Player
+        src="https://assets6.lottiefiles.com/packages/lf20_kbxkymqy.json"
+        background="transparent"
+        speed="1"
+        style={({ maxWidth: "300px" }, { maxHeight: "300px" })}
+        loop
+        autoplay
+      />
     </Loading>
   ) : (
     <>

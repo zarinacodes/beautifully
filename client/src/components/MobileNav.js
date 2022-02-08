@@ -12,10 +12,16 @@ export default ({ onClose }) => {
       </MobileNav.MobileHeader>
       <MobileNav.Menu>
         <MobileNav.MenuItem modifiers="bold">
-          Women's Clothing <ChevronRightIcon />
+          <MobileNav.Anchor to="/her" onClick={onClose}>
+            Women's Clothing
+          </MobileNav.Anchor>
+          <ChevronRightIcon />
         </MobileNav.MenuItem>
         <MobileNav.MenuItem modifiers="bold">
-          Men's Clothing <ChevronRightIcon />
+          <MobileNav.Anchor to="/him" onClick={onClose}>
+            Men's Clothing
+          </MobileNav.Anchor>{" "}
+          <ChevronRightIcon />
         </MobileNav.MenuItem>
         <MobileNav.MenuItem>
           Activities

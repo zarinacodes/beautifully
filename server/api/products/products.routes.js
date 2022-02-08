@@ -1,7 +1,13 @@
 const express = require("express");
-const { getProducts } = require("./products.controller");
+const {
+  getAllProducts,
+  getMensProducts,
+  getWomensProducts,
+} = require("./products.controller");
 const router = express.Router();
 
-router.get("/", getProducts);
+router.get("/", getAllProducts);
+router.get("/him", getMensProducts);
+router.get("/her", getWomensProducts);
 
 module.exports = router;

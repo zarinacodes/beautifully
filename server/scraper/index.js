@@ -41,8 +41,9 @@ const parseProducts = (document) => {
   );
 };
 
-const scrapProducts = (offset, pageSize) => {
-  const url = `https://www2.hm.com/pl_pl/ona/produkty/view-all.html?sort=stock&colorWithNames=fioletowy_800080&patterns=jednolity&image-size=big&offset=${offset}&page-size=${pageSize}`;
+const scrapProducts = (offset, pageSize, gender) => {
+  const url = `https://www2.hm.com/pl_pl/${gender}/produkty/view-all.html?sort=stock&colorWithNames=fioletowy_800080&patterns=jednolity&image-size=big&offset=${offset}&page-size=${pageSize}`;
+  console.log(url);
   return axios
     .get(url)
     .then((response) => response.data)

@@ -6,6 +6,7 @@ import Country from "./Country";
 import Menu from "./Menu";
 import MobileHeader from "./MobileHeader";
 import MenuItem from "./MenuItem";
+import Anchor from "./Anchor";
 
 export const MobileNav = styled.nav`
   display: none;
@@ -28,5 +29,6 @@ MobileNav.Country = Country;
 MobileNav.Menu = Menu;
 MobileNav.MobileHeader = MobileHeader;
 MobileNav.MenuItem = MenuItem;
+MobileNav.Anchor = Anchor;
 
 export default MobileNav;

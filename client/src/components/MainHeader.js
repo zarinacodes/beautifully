@@ -13,6 +13,7 @@ import { SearchIcon } from "@heroicons/react/outline";
 import { MenuAlt2Icon } from "@heroicons/react/outline";
 import { useProductContext } from "./useProductContext";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default ({ onOpen }) => {
   const { likedProducts, setSearch, search } = useProductContext();
@@ -52,11 +53,17 @@ export default ({ onOpen }) => {
       <MainHeader.Menu>
         <MenuAlt2Icon onClick={onOpen} />
       </MainHeader.Menu>
-      <Logo />
+      <Link to="/">
+        <Logo />
+      </Link>
       <Menu>
         <Menu.List>
-          <Menu.Item modifiers="bold">Men's</Menu.Item>
-          <Menu.Item modifiers={["bold", "divider"]}>Women's</Menu.Item>
+          <Menu.Item modifiers="bold">
+            <Menu.Anchor to="/him">Men's</Menu.Anchor>
+          </Menu.Item>
+          <Menu.Item modifiers={["bold", "divider"]}>
+            <Menu.Anchor to="/her">Women's</Menu.Anchor>
+          </Menu.Item>
           <Menu.Item>Activities</Menu.Item>
           <Menu.Item>Brands</Menu.Item>
         </Menu.List>
