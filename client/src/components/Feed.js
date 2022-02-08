@@ -15,8 +15,7 @@ export default ({ gender }) => {
   useEffect(() => {
     setIsLoading(true);
     fetch(
-      `http://localhost:5000/api/products/${gender}?offset=0&pageSize=12`
-      // "https://beautifully-app.herokuapp.com/api/products?offset=0&pageSize=12"
+      `https://beautifully-app.herokuapp.com/api/products/${gender}?offset=0&pageSize=12`
     )
       .then((response) => response.json())
       .then((data) => {
